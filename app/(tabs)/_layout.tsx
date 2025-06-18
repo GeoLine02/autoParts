@@ -1,6 +1,5 @@
 import { Tabs } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import Header from "@/components/shared/Header";
 
 const TabsLayout = () => {
   return (
@@ -8,8 +7,8 @@ const TabsLayout = () => {
       <Tabs.Screen
         name="(home)"
         options={{
-          header: () => <Header />,
           title: "Home",
+          headerShown: false,
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name="home"
@@ -30,12 +29,6 @@ const TabsLayout = () => {
               color={focused ? "#2868D5" : "gray"}
             />
           ),
-        }}
-      />
-      <Tabs.Screen
-        name="Product"
-        options={{
-          headerShown: false,
         }}
       />
     </Tabs>

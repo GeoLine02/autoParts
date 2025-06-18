@@ -1,6 +1,6 @@
-import { ProductType } from "@/types/products";
+import { ProductCardType, ProductDetailsType } from "@/types/products";
 
-export const productsData: ProductType[] = [
+export const productsData: ProductCardType[] = [
   {
     id: 1,
     productImage: "",
@@ -92,3 +92,19 @@ export const productsData: ProductType[] = [
     sellerName: "Auto warehouse",
   },
 ];
+
+export const productDetailsData: ProductDetailsType = {
+  id: 1,
+  productName: "Front Left Headlight",
+  productPrice: 150,
+  productDescription:
+    "Used front left headlight for Honda Civic 2018-2020. In good condition, all mounting points intact, no cracks or major scratches on the lens.",
+  productImages: [""],
+  seller: {
+    id: 1,
+    sellerLocation: "Batumi",
+    sellerName: "Auto Parts Warehouse",
+    sellerRating: 5.0,
+    totalOrders: 230,
+  },
+};

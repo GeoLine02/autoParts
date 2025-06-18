@@ -1,8 +1,8 @@
-import { ProductType } from "@/types/products";
+import { ProductCardType } from "@/types/products";
 import { Link } from "expo-router";
 import { View, Text, Pressable } from "react-native";
 
-type ProductCardProps = ProductType;
+type ProductCardProps = ProductCardType;
 
 export default function ProductCard({
   id,
@@ -15,7 +15,7 @@ export default function ProductCard({
   return (
     <Link
       href={{
-        pathname: "/(tabs)/(home)/product/[id]",
+        pathname: "/product/[id]",
         params: { id: id.toString() },
       }}
       asChild
