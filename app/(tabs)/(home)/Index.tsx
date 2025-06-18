@@ -3,7 +3,7 @@ import { View } from "react-native";
 
 export default function Home() {
   return (
-    <View className="bg-gray-100 mb-[160px]">
+    <View className="bg-soft-white mb-[160px]">
       <Products />
     </View>
   );

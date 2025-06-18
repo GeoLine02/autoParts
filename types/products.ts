@@ -1,4 +1,6 @@
-export interface ProductType {
+import { SellerType } from "./seller";
+
+export interface ProductCardType {
   id: number;
   productImage: string;
   productName: string;
@@ -6,4 +8,13 @@ export interface ProductType {
   productRating: number;
   totalOrders: number;
   sellerName: string;
+}
+
+export interface ProductDetailsType {
+  id: number;
+  productImages: string[];
+  productDescription: string;
+  productName: string;
+  productPrice: number;
+  seller: SellerType;
 }
