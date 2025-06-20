@@ -31,6 +31,19 @@ const TabsLayout = () => {
           ),
         }}
       />
+      <Tabs.Screen
+        name="Profile"
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name="person"
+              size={24}
+              color={focused ? "#2868D5" : "gray"}
+            />
+          ),
+        }}
+      />
     </Tabs>
   );
 };
