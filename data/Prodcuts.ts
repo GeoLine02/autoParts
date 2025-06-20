@@ -101,7 +101,7 @@ export const productDetailsData: ProductDetailsType = {
     "Used front left headlight for Honda Civic 2018-2020. In good condition, all mounting points intact, no cracks or major scratches on the lens.",
   productImages: [""],
   seller: {
-    id: 1,
+    sellerId: 1,
     sellerLocation: "Batumi",
     sellerName: "Auto Parts Warehouse",
     sellerRating: 5.0,

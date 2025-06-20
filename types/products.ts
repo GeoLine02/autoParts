@@ -16,5 +16,5 @@ export interface ProductDetailsType {
   productDescription: string;
   productName: string;
   productPrice: number;
-  seller: SellerType;
+  seller: Omit<SellerType, "products">;
 }

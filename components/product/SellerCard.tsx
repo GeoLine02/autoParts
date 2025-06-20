@@ -3,15 +3,17 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Link } from "expo-router";
 import { View, Text } from "react-native";
 
-type SellerCardProps = SellerType;
+type SellerCardProps = Omit<SellerType, "products">;
 
 export default function SellerCard({
-  id,
+  sellerId,
   sellerLocation,
   sellerName,
   sellerRating,
   totalOrders,
 }: SellerCardProps) {
+  console.log(sellerId);
+
   return (
     <View className="flex-row gap-2">
       <View className="w-[60px] aspect-square rounded-[4px] bg-gray-700" />
@@ -34,7 +36,7 @@ export default function SellerCard({
         <Link
           href={{
             pathname: "/seller/[id]",
-            params: { id: id.toString() },
+            params: { id: sellerId.toString() },
           }}
           className="underline text-blue-600 text-sm"
         >

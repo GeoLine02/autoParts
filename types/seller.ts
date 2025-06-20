@@ -1,7 +1,10 @@
+import { ProductCardType } from "./products";
+
 export interface SellerType {
-  id: number;
+  sellerId: number;
   sellerName: string;
   sellerRating: number;
   totalOrders: number;
   sellerLocation: string;
+  products: ProductCardType[];
 }
