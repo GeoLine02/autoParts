@@ -1,13 +1,16 @@
-import { productsData } from "@/data/Prodcuts";
-import { View, Text, FlatList } from "react-native";
+import { View, FlatList } from "react-native";
 import ProductCard from "../shared/ProductCard";
+import { ProductCardType } from "@/types/products";
 
-export default function Products() {
+interface ProductsProps {
+  products: ProductCardType[];
+}
+
+export default function Products({ products }: ProductsProps) {
   return (
     <View className="container gap-[18px]">
-      <Text className="text-2xl font-bold">Best sellings</Text>
       <FlatList
-        data={productsData}
+        data={products}
         keyExtractor={(item) => item.id.toString()}
         showsVerticalScrollIndicator={false}
         numColumns={2}

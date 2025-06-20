@@ -1,10 +1,11 @@
-import Products from "@/components/home/Products";
+import Products from "@/components/shared/Products";
+import { productsData } from "@/data/Prodcuts";
 import { View } from "react-native";
 
 export default function Home() {
   return (
     <View className="bg-soft-white mb-[160px]">
-      <Products />
+      <Products products={productsData} />
     </View>
   );
 }

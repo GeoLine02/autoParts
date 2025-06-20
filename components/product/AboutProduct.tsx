@@ -1,6 +1,5 @@
 import { ProductDetailsType } from "@/types/products";
 import { View, Text } from "react-native";
-import SellerCard from "./SellerCard";
 
 type AboutProductProps = ProductDetailsType;
 
@@ -18,16 +17,6 @@ export default function AboutProduct({
       <View>
         <Text className="text-xl font-semibold">Description</Text>
         <Text>{productDescription}</Text>
-      </View>
-      <View className="mt-[30px]">
-        <Text className="text-xl font-semibold mb-2">Seller</Text>
-        <SellerCard
-          id={seller.id}
-          sellerLocation={seller.sellerLocation}
-          sellerName={seller.sellerName}
-          sellerRating={seller.sellerRating}
-          totalOrders={seller.totalOrders}
-        />
       </View>
     </View>
   );

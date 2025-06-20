@@ -2,24 +2,15 @@ import AboutProduct from "@/components/product/AboutProduct";
 import OfferYourPriceWrapper from "@/components/product/OfferYourPriceWrapper";
 import ProductDetailsFooterWrapper from "@/components/product/ProductDetailsFooterWrapper";
 import ProductImages from "@/components/product/ProductImages";
+import SellerCard from "@/components/product/SellerCard";
 import { productDetailsData } from "@/data/Prodcuts";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { useEffect } from "react";
-import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ProductDetails() {
-  const { id } = useLocalSearchParams();
-
-  const { height: screenHeight } = Dimensions.get("window");
-
-  const styles = StyleSheet.create({
-    screen: {
-      height: screenHeight,
-    },
-  });
-
   useEffect(() => {
     // TODO: fetch product by ID data here
   }, []);
@@ -33,7 +24,7 @@ export default function ProductDetails() {
       className="bg-soft-white flex-1"
     >
       <Pressable
-        onPress={() => navigate.push("/(tabs)/(home)")}
+        onPress={() => navigate.push("/(tabs)/(home)/Index")}
         className="flex-row items-center gap-2"
       >
         <Ionicons name="arrow-back" size={35} color="gray" />
@@ -49,6 +40,16 @@ export default function ProductDetails() {
           productPrice={productDetailsData.productPrice}
           seller={productDetailsData.seller}
         />
+        <View className="mt-[30px]">
+          <Text className="text-xl font-semibold mb-2">Seller</Text>
+          <SellerCard
+            id={productDetailsData.seller.id}
+            sellerLocation={productDetailsData.seller.sellerLocation}
+            sellerName={productDetailsData.seller.sellerName}
+            sellerRating={productDetailsData.seller.sellerRating}
+            totalOrders={productDetailsData.seller.totalOrders}
+          />
+        </View>
         <OfferYourPriceWrapper />
       </View>
       <ProductDetailsFooterWrapper />
